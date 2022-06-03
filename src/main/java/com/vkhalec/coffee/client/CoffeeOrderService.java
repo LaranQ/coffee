@@ -1,8 +1,8 @@
-package com.vkhalec.client;
+package com.vkhalec.coffee.client;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
-import com.vkhalec.shared.CoffeeOrder;
+import com.vkhalec.coffee.shared.CoffeeOrder;
 
 import java.util.List;
 

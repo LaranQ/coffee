@@ -1,11 +1,12 @@
-package com.vkhalec.server.service;
+package com.vkhalec.coffee.server.service;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import com.vkhalec.client.CoffeeMachineService;
-import com.vkhalec.server.dao.CoffeeMachineRepository;
-import com.vkhalec.shared.Coffee;
-import com.vkhalec.shared.CoffeeMachine;
-import com.vkhalec.server.exception_handling.CoffeeException;
+import com.vkhalec.coffee.client.CoffeeMachineService;
+import com.vkhalec.coffee.server.dao.CoffeeMachineRepository;
+import com.vkhalec.coffee.shared.Coffee;
+import com.vkhalec.coffee.shared.CoffeeMachine;
+import com.vkhalec.coffee.server.exception_handling.CoffeeException;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -15,8 +16,8 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CoffeeMachineServiceImpl extends RemoteServiceServlet
-        implements CoffeeMachineService {
+@NoArgsConstructor
+public class CoffeeMachineServiceImpl implements CoffeeMachineService {
 
     @Autowired
     private CoffeeMachineRepository repository;

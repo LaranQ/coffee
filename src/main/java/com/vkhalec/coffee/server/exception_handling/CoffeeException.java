@@ -1,6 +1,10 @@
-package com.vkhalec.server.exception_handling;
+package com.vkhalec.coffee.server.exception_handling;
 
 public class CoffeeException extends RuntimeException {
+
+    public CoffeeException() {
+        super();
+    }
 
     public CoffeeException(String message) {
         super(message);

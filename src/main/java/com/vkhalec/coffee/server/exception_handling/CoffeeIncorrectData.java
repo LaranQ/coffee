@@ -1,10 +1,11 @@
-package com.vkhalec.server.exception_handling;
+package com.vkhalec.coffee.server.exception_handling;
 
 //import io.swagger.annotations.ApiModel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//@ApiModel
+@NoArgsConstructor
 @Getter
 @Setter
 public class CoffeeIncorrectData {

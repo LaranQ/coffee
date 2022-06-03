@@ -7,7 +7,7 @@
 
   <servlet>
     <servlet-name>coffeeOrderServlet</servlet-name>
-    <servlet-class>com.vkhalec.server.service.CoffeeOrderServiceImpl</servlet-class>
+    <servlet-class>com.vkhalec.coffee.server.service.CoffeeOrderServiceImpl</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -17,7 +17,7 @@
 
   <servlet>
     <servlet-name>coffeeServlet</servlet-name>
-    <servlet-class>com.vkhalec.server.service.CoffeeServiceImpl</servlet-class>
+    <servlet-class>com.vkhalec.coffee.server.service.CoffeeServiceImpl</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -27,7 +27,7 @@
 
   <servlet>
     <servlet-name>coffeeMachineServlet</servlet-name>
-    <servlet-class>com.vkhalec.server.service.CoffeeMachineServiceImpl</servlet-class>
+    <servlet-class>com.vkhalec.coffee.server.service.CoffeeMachineServiceImpl</servlet-class>
   </servlet>
 
   <servlet-mapping>

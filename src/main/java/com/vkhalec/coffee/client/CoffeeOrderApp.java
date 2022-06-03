@@ -1,4 +1,4 @@
-package com.vkhalec.client;
+package com.vkhalec.coffee.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.core.client.EntryPoint;
@@ -15,9 +15,9 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
-import com.vkhalec.shared.Coffee;
-import com.vkhalec.shared.CoffeeMachine;
-import com.vkhalec.shared.CoffeeOrder;
+import com.vkhalec.coffee.shared.Coffee;
+import com.vkhalec.coffee.shared.CoffeeMachine;
+import com.vkhalec.coffee.shared.CoffeeOrder;
 
 public class CoffeeOrderApp implements EntryPoint {
 
@@ -32,7 +32,7 @@ public class CoffeeOrderApp implements EntryPoint {
     final Label sendToServerLabel = new Label();
     final Button closeButton = new Button("Закрыть");
 
-    private final CoffeeOrderServiceAsync coffeeOrderService = GWT.create(CoffeeOrderService.class);
+    private final CoffeeOrderServiceAsync coffeeOrderService = CoffeeOrderServiceAsync.Util.getInstance();
 
     public void onModuleLoad() {
 

@@ -1,6 +1,6 @@
-package com.vkhalec.server.dao;
+package com.vkhalec.coffee.server.dao;
 
-import com.vkhalec.shared.CoffeeOrder;
+import com.vkhalec.coffee.shared.CoffeeOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

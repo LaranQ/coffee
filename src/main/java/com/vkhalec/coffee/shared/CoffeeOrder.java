@@ -1,4 +1,4 @@
-package com.vkhalec.shared;
+package com.vkhalec.coffee.shared;
 
 //import io.swagger.annotations.ApiModel;
 //import io.swagger.annotations.ApiModelProperty;
@@ -10,11 +10,12 @@ import java.io.Serializable;
 
 //@ApiModel
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "coffee_orders")
 public class CoffeeOrder implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,13 +24,11 @@ public class CoffeeOrder implements Serializable {
     Integer id;
 
 //    @ApiModelProperty
-    @Setter
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "coffee")
     Coffee coffee;
 
 //    @ApiModelProperty
-    @Setter
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "coffee_machine")
     CoffeeMachine coffeeMachine;
@@ -37,6 +36,10 @@ public class CoffeeOrder implements Serializable {
 //    @ApiModelProperty
     @Column(name = "date", nullable = false, updatable = false, insertable = false)
     String date;
+
+    public CoffeeOrder() {
+
+    }
 
     public Integer getId() {
         return id;
