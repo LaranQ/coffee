@@ -7,7 +7,7 @@ import com.vkhalec.shared.CoffeeMachine;
 
 import java.util.List;
 
-@RemoteServiceRelativePath("service/coffeeMachine")
+@RemoteServiceRelativePath("coffeeMachine")
 public interface CoffeeMachineService extends RemoteService {
     CoffeeMachine getCoffeeMachine(Integer id);
     List<CoffeeMachine> getAllCoffeeMachine();
