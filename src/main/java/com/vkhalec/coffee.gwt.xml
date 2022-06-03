@@ -21,7 +21,7 @@
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='com.vkhalec.client.CoffeeOrderApp'/>
-    <servlet path="/CoffeeOrder2Service" class="com.vkhalec.server.CoffeeOrder2ServiceImpl"/>
+    <servlet path="/coffee/coffeeOrder" class="com.vkhalec.server.service.CoffeeOrderServiceImpl"/>
 
     <!-- Specify the paths for translatable code                    -->
   <source path='client'/>

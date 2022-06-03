@@ -5,26 +5,36 @@
          version="2.5"
          xmlns="http://java.sun.com/xml/ns/javaee">
 
-  <!-- Servlets -->
   <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>com.vkhalec.server.CoffeeOrderServiceImpl</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>com.vkhalec.coffee CoffeeOrder2Service</servlet-name>
-    <servlet-class>com.vkhalec.server.CoffeeOrder2ServiceImpl</servlet-class>
+    <servlet-name>coffeeOrderServlet</servlet-name>
+    <servlet-class>com.vkhalec.server.service.CoffeeOrderServiceImpl</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/coffee/greet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>com.vkhalec.coffee CoffeeOrder2Service</servlet-name>
-    <url-pattern>/coffee/CoffeeOrder2Service</url-pattern>
+    <servlet-name>coffeeOrderServlet</servlet-name>
+    <url-pattern>/coffee/coffeeOrder</url-pattern>
   </servlet-mapping>
 
-  <!-- Default page to serve -->
+  <servlet>
+    <servlet-name>coffeeServlet</servlet-name>
+    <servlet-class>com.vkhalec.server.service.CoffeeServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>coffeeServlet</servlet-name>
+    <url-pattern>/coffee/coffee</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>coffeeMachineServlet</servlet-name>
+    <servlet-class>com.vkhalec.server.service.CoffeeMachineServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>coffeeMachineServlet</servlet-name>
+    <url-pattern>/coffee/coffeeMachine</url-pattern>
+  </servlet-mapping>
+
   <welcome-file-list>
     <welcome-file>coffee.html</welcome-file>
   </welcome-file-list>

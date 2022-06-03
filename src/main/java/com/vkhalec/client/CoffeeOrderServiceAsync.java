@@ -1,12 +1,16 @@
 package com.vkhalec.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.vkhalec.shared.CoffeeOrderDto;
+import com.vkhalec.shared.CoffeeOrder;
 
-/**
- * The async counterpart of <code>GreetingService</code>.
- */
+import java.util.List;
+
 public interface CoffeeOrderServiceAsync {
-  void coffeeOrderServer(CoffeeOrderDto coffeeOrderDto, AsyncCallback<CoffeeOrderDto> callback)
-      throws IllegalArgumentException;
+    void getAllCoffeeOrder(AsyncCallback<List<CoffeeOrder>> async);
+
+    void getCoffeeOrder(int id, AsyncCallback<CoffeeOrder> async);
+
+    void isExist(Integer id, AsyncCallback<Boolean> async);
+
+    void saveCoffeeOrder(CoffeeOrder coffeeOrder, AsyncCallback<CoffeeOrder> async);
 }

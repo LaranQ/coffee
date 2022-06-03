@@ -1,9 +1,6 @@
 package com.vkhalec.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.vkhalec.shared.CoffeeDto;
-import com.vkhalec.shared.CoffeeMachineDto;
-import com.vkhalec.shared.CoffeeOrderDto;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -18,6 +15,9 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.vkhalec.shared.Coffee;
+import com.vkhalec.shared.CoffeeMachine;
+import com.vkhalec.shared.CoffeeOrder;
 
 public class CoffeeOrderApp implements EntryPoint {
 
@@ -84,16 +84,16 @@ public class CoffeeOrderApp implements EntryPoint {
             private void sendInfoToServer() {
 
                 errorLabel.setText("");
-                CoffeeOrderDto coffeeOrderDto = new CoffeeOrderDto();
+                CoffeeOrder coffeeOrderDto = new CoffeeOrder();
 
-                coffeeOrderDto.setCoffee(new CoffeeDto(coffeeIdField.getText()));
-                coffeeOrderDto.setCoffeeMachine(new CoffeeMachineDto(coffeeMachineIdField.getText()));
+                coffeeOrderDto.setCoffee(new Coffee(coffeeIdField.getText()));
+                coffeeOrderDto.setCoffeeMachine(new CoffeeMachine(coffeeMachineIdField.getText()));
 
                 confirmButton.setEnabled(false);
                 sendToServerLabel.setText("coffee id=" + coffeeOrderDto.getCoffee().getId() +
                         "coffeemachine id=" + coffeeOrderDto.getCoffeeMachine().getId());
                 serverResponseHtml.setText("");
-                coffeeOrderService.coffeeOrderServer(coffeeOrderDto, new AsyncCallback<CoffeeOrderDto>() {
+                coffeeOrderService.saveCoffeeOrder(coffeeOrderDto, new AsyncCallback<CoffeeOrder>() {
 
                     public void onFailure(Throwable caught) {
                         dialogBox.setText("Remote Procedure Call - Failure");
@@ -103,7 +103,7 @@ public class CoffeeOrderApp implements EntryPoint {
                         closeButton.setFocus(true);
                     }
 
-                    public void onSuccess(CoffeeOrderDto result) {
+                    public void onSuccess(CoffeeOrder result) {
                         dialogBox.setText("Remote Procedure Call");
                         serverResponseHtml.removeStyleName("serverResponseLabelError");
                         serverResponseHtml.setHTML(coffeeOrderDto.toString());
