@@ -7,7 +7,6 @@ import com.vkhalec.coffee.client.CoffeeService;
 import com.vkhalec.coffee.shared.Coffee;
 import com.vkhalec.coffee.shared.CoffeeMachine;
 import com.vkhalec.coffee.shared.CoffeeOrder;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -19,8 +18,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@NoArgsConstructor
-public class CoffeeOrderServiceImpl implements CoffeeOrderService {
+public class CoffeeOrderServiceImpl
+        extends RemoteServiceServlet
+        implements CoffeeOrderService {
 
     @Autowired
     private CoffeeOrderRepository repository;
@@ -30,6 +30,9 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
 
     @Autowired
     private CoffeeMachineService coffeeMachineService;
+
+    public CoffeeOrderServiceImpl() {
+    }
 
     @Override
     public List<CoffeeOrder> getAllCoffeeOrder() {

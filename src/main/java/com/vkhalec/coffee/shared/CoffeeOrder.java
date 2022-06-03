@@ -1,16 +1,8 @@
 package com.vkhalec.coffee.shared;
 
-//import io.swagger.annotations.ApiModel;
-//import io.swagger.annotations.ApiModelProperty;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
-//@ApiModel
-@FieldDefaults(level = AccessLevel.PRIVATE)
-@AllArgsConstructor
 @Entity
 @Table(name = "coffee_orders")
 public class CoffeeOrder implements Serializable {
@@ -20,25 +12,28 @@ public class CoffeeOrder implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-//    @ApiModelProperty
-    Integer id;
+    private Integer id;
 
-//    @ApiModelProperty
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "coffee")
-    Coffee coffee;
+    private Coffee coffee;
 
-//    @ApiModelProperty
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "coffee_machine")
-    CoffeeMachine coffeeMachine;
+    private CoffeeMachine coffeeMachine;
 
-//    @ApiModelProperty
     @Column(name = "date", nullable = false, updatable = false, insertable = false)
-    String date;
+    private String date;
 
     public CoffeeOrder() {
 
+    }
+
+    public CoffeeOrder(Integer id, Coffee coffee, CoffeeMachine coffeeMachine, String date) {
+        this.id = id;
+        this.coffee = coffee;
+        this.coffeeMachine = coffeeMachine;
+        this.date = date;
     }
 
     public Integer getId() {

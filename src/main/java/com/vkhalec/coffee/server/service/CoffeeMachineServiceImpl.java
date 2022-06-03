@@ -6,7 +6,6 @@ import com.vkhalec.coffee.server.dao.CoffeeMachineRepository;
 import com.vkhalec.coffee.shared.Coffee;
 import com.vkhalec.coffee.shared.CoffeeMachine;
 import com.vkhalec.coffee.server.exception_handling.CoffeeException;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -16,11 +15,15 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@NoArgsConstructor
-public class CoffeeMachineServiceImpl implements CoffeeMachineService {
+public class CoffeeMachineServiceImpl
+        extends RemoteServiceServlet
+        implements CoffeeMachineService {
 
     @Autowired
     private CoffeeMachineRepository repository;
+
+    public CoffeeMachineServiceImpl() {
+    }
 
     @Override
     public CoffeeMachine getCoffeeMachine(Integer id) {

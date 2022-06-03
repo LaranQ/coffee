@@ -92,11 +92,11 @@
       <version>3.0.0</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <optional>true</optional>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.projectlombok</groupId>-->
+<!--      <artifactId>lombok</artifactId>-->
+<!--      <optional>true</optional>-->
+<!--    </dependency>-->
 
   </dependencies>
 
@@ -200,6 +200,20 @@
           <optimizationLevel>0</optimizationLevel>
         </configuration>
       </plugin>
+
+<!--      <plugin>-->
+<!--        <groupId>net.ltgt.gwt.maven</groupId>-->
+<!--        <artifactId>gwt-maven-plugin</artifactId>-->
+<!--        <version>1.0.0</version>-->
+<!--        <extensions>true</extensions>-->
+<!--        <configuration>-->
+<!--          <sourceLevel>1.8</sourceLevel>-->
+<!--          <failOnError>true</failOnError>-->
+<!--          <jvmArgs>-->
+<!--            <arg>-javaagent:${settings.localRepository}/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar=ECJ</arg>-->
+<!--          </jvmArgs>-->
+<!--        </configuration>-->
+<!--      </plugin>-->
 
     </plugins>
   </build>
